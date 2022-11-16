@@ -27,18 +27,20 @@ public class BuildTool : MonoBehaviour
     private Vector3 worldPosition;
     private float clampToForward = 1000f;
     
-    
-    [SerializeField]private Building _spawnedBuilding;
-    
+    private Building _spawnedBuilding;
     private Quaternion _lastRotation;
+    private Vector3 _lastPosition;
     
     private Building _targetBuilding;
-    public BuildingData Data;
 
-    private void Start()
+    private void OnEnable()
     {
-        
-        ChoosePart(Data);
+        BuildingPanelUI.onPartChosen += ChoosePart;
+    }
+    
+    private void OnDisable()
+    {
+        BuildingPanelUI.onPartChosen -= ChoosePart;
     }
 
     private void ChoosePart(BuildingData data)
@@ -50,16 +52,12 @@ public class BuildTool : MonoBehaviour
             _deleteModeEnabled = false;
         }
 
-        if (_spawnedBuilding != null)
-        {
-            Destroy(_spawnedBuilding.gameObject);
-            _spawnedBuilding = null;
-        }
+        DeleteObjectPreview();
 
         var go = new GameObject
         {
             layer = _defaultLayerInt,
-            name = "Building name"
+            name = "Building Preview"
         };
         
         _spawnedBuilding = go.AddComponent<Building>();
@@ -69,9 +67,23 @@ public class BuildTool : MonoBehaviour
 
     private void Update()
     {
+        if (_spawnedBuilding && Keyboard.current.escapeKey.wasPressedThisFrame) DeleteObjectPreview();
         if (Keyboard.current.jKey.wasPressedThisFrame) _deleteModeEnabled = !_deleteModeEnabled;
         if (_deleteModeEnabled) DeleteModeLogic();
         else BuildModeLogic();
+        
+        // Turn the preview block off when delete mode is on
+        var previewBlock = GameObject.Find("Building Preview").GetComponentInChildren<MeshRenderer>();
+        previewBlock.enabled = !_deleteModeEnabled;
+    }
+
+    private void DeleteObjectPreview()
+    {
+        if (_spawnedBuilding != null)
+        {
+            Destroy(_spawnedBuilding.gameObject);
+            _spawnedBuilding = null;
+        }
     }
 
 
@@ -98,7 +110,7 @@ public class BuildTool : MonoBehaviour
 
     private void PositionBuildingPreview()
     {
-        _spawnedBuilding.UpdateMaterial(_buildingMatNegative);
+        _spawnedBuilding.UpdateMaterial(_spawnedBuilding.IsOverlaping ? _buildingMatNegative : _buildingMatPositive);
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             _spawnedBuilding.transform.Rotate(0, _rotateSnapFloat,0);
@@ -107,12 +119,8 @@ public class BuildTool : MonoBehaviour
 
         if (IsRayHitting(_buildModeLayerMask, out RaycastHit hitInfo))
         {
-            _spawnedBuilding.UpdateMaterial(_buildingMatPositive);
             var gridPositon = WorldGrid.GridPositionFromWorldPosition(hitInfo.point, 1f);
             _spawnedBuilding.transform.position = gridPositon;
-            //var obj = hitInfo.collider.gameObject;
-            //Debug.Log($"Looking at {obj.name}", this);
-            //_spawnedBuilding.transform.position = hitInfo.point;
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
                 _spawnedBuilding.PlaceBuilding();

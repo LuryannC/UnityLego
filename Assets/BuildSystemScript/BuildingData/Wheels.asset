@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d296e96b429c114c8fd48aa74503f2b, type: 3}
-  m_Name: Test Building
+  m_Name: Wheels
   m_EditorClassIdentifier: 
-  DisplayName: Engine
-  Icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  DisplayName: 
+  Icon: {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
   GridSnapSize: 1
-  Prefab: {fileID: 8492752469131789955, guid: b02dfa1b24c037145a2e0a406bafc5a0, type: 3}
+  Prefab: {fileID: 8492752469131789955, guid: 4239ceb42181aa144922e96f3fdb29ba, type: 3}
   BuildingSize: {x: 0.8, y: 0.8, z: 0.8}
-  PartType: 0
+  PartType: 1
