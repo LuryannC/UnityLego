@@ -15,6 +15,7 @@ public class BuildTool : MonoBehaviour
     
     [SerializeField] private Material _buildingMatPositive;
     [SerializeField] private Material _buildingMatNegative;
+    [SerializeField] private AddToParent _addtoparent;
 
     private bool _deleteModeEnabled;
     
@@ -121,12 +122,13 @@ public class BuildTool : MonoBehaviour
         {
             var gridPositon = WorldGrid.GridPositionFromWorldPosition(hitInfo.point, 1f);
             _spawnedBuilding.transform.position = gridPositon;
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame && !_spawnedBuilding.IsOverlaping)
             {
                 _spawnedBuilding.PlaceBuilding();
                 var dataCopy = _spawnedBuilding.AssignedData;
                 _spawnedBuilding = null;
                 ChoosePart(dataCopy);
+                _addtoparent.AddTolist(_spawnedBuilding.gameObject);
             }
         }
     }

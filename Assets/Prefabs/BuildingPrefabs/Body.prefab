@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8492752469120624329}
   - component: {fileID: 8492752469120624334}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,9 +54,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8492752469131789952}
-  m_Layer: 0
-  m_Name: Building_Engine
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Body
+  m_TagString: Parts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8492752469504854418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 8492752469922710033}
   - component: {fileID: 8492752469922710039}
   - component: {fileID: 8492752469922710038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

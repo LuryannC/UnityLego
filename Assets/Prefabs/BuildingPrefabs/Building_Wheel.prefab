@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8874998508435845049}
   - component: {fileID: 6597505077732291704}
   - component: {fileID: 7760417430188326177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8492752469120624329}
   - component: {fileID: 9092840265184350788}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,9 +137,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8492752469131789952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Building_Wheel
-  m_TagString: Untagged
+  m_TagString: Parts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8492752469504854418}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -30,9 +30,6 @@ public class Building : MonoBehaviour
         _boxCollider.size = _assignedData.BuildingSize;
         _boxCollider.center = new Vector3(0, (_assignedData.BuildingSize.y + .1f) * 0.5f, 0);
         _boxCollider.isTrigger = true;
-
-        var rb = gameObject.AddComponent<Rigidbody>();
-        rb.isKinematic = true;
         
         _graphic = Instantiate(data.Prefab, transform);
         _renderer = _graphic.GetComponentInChildren<Renderer>();
@@ -58,7 +55,7 @@ public class Building : MonoBehaviour
         for (int i = 0; i < _colliders.childCount; i++){
             _colliders.GetChild(i).gameObject.layer = 10;
         }
-        gameObject.name = _assignedData.DisplayName + " - " + transform.position;
+        gameObject.name = _assignedData.DisplayName;
     }
     
     public void FlagForDelete(Material deleteMaterial)
@@ -81,5 +78,10 @@ public class Building : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         _isOverlaping = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        _isOverlaping = true;
     }
 }
