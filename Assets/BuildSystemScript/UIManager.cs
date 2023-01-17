@@ -18,8 +18,7 @@ public class UIManager : MonoBehaviour
     {
         if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
-            BuildingPanelUI.gameObject.SetActive(!BuildingPanelUI.gameObject.activeInHierarchy);
-            SetMouseCursorState(BuildingPanelUI.gameObject.activeInHierarchy);
+            OpenCloseUI();
         }
     }
     
@@ -27,5 +26,12 @@ public class UIManager : MonoBehaviour
     {
         Cursor.visible = state;
         Cursor.lockState = state ? CursorLockMode.None : CursorLockMode.Locked;
+    }
+
+    public bool OpenCloseUI()
+    {
+        BuildingPanelUI.gameObject.SetActive(!BuildingPanelUI.gameObject.activeInHierarchy);
+        SetMouseCursorState(BuildingPanelUI.gameObject.activeInHierarchy);
+        return BuildingPanelUI.gameObject.activeInHierarchy;
     }
 }

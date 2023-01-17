@@ -33,6 +33,13 @@ public class BuildTool : MonoBehaviour
     private Vector3 _lastPosition;
     
     private Building _targetBuilding;
+    
+    private UIManager uiManager;
+
+    private void Awake()
+    {
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+    }
 
     private void OnEnable()
     {
@@ -106,7 +113,6 @@ public class BuildTool : MonoBehaviour
 
         PositionBuildingPreview();
 
-
     }
 
     private void PositionBuildingPreview()
@@ -124,6 +130,7 @@ public class BuildTool : MonoBehaviour
             _spawnedBuilding.transform.position = gridPositon;
             if (Mouse.current.leftButton.wasPressedThisFrame && !_spawnedBuilding.IsOverlaping)
             {
+                if (uiManager.BuildingPanelUI.gameObject.activeInHierarchy)return; // Stops from building when the UI is open
                 _spawnedBuilding.PlaceBuilding();
                 var dataCopy = _spawnedBuilding.AssignedData;
                 _spawnedBuilding = null;

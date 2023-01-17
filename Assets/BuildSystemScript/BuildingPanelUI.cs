@@ -13,8 +13,12 @@ public class BuildingPanelUI : MonoBehaviour
     
     public static UnityAction<BuildingData> onPartChosen;
 
+    private UIManager uiManager;
+    
+    
     public void OnClick(BuildingData choosenData)
     {
+        uiManager.OpenCloseUI();
         onPartChosen?.Invoke(choosenData);
     }
 
@@ -22,6 +26,7 @@ public class BuildingPanelUI : MonoBehaviour
     {
         _button = GetComponentInChildren<Button>();
         _button.onClick.AddListener(() => OnClick(_assignedData));
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     public void Init(BuildingData assignedData)
