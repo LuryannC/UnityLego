@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Building
   m_EditorClassIdentifier: 
   DisplayName: Cube
-  Icon: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  Icon: {fileID: 21300000, guid: 388fa7b6128573441be418785c6631dd, type: 3}
   GridSnapSize: 1
   Prefab: {fileID: 8492752469131789955, guid: b02dfa1b24c037145a2e0a406bafc5a0, type: 3}
   BuildingSize: {x: 0.8, y: 0.8, z: 0.8}

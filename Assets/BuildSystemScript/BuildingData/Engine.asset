@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Engine
   m_EditorClassIdentifier: 
   DisplayName: Engine
-  Icon: {fileID: 21300000, guid: 7fd3cda14282bb7429b8eeb6c121e5bb, type: 3}
+  Icon: {fileID: 21300000, guid: 4692f37494723f74f9b531f6e2fde08e, type: 3}
   GridSnapSize: 1
   Prefab: {fileID: 8550064015094272309, guid: 51f614450a166e84ab630ac4f3e05b1b, type: 3}
   BuildingSize: {x: 1, y: 1, z: 1}

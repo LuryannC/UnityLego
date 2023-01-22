@@ -728,6 +728,7 @@ GameObject:
   - component: {fileID: 8550064015087707305}
   - component: {fileID: 8550064015087707303}
   - component: {fileID: 1688746141235841280}
+  - component: {fileID: 38711639133836850}
   m_Layer: 10
   m_Name: Engine
   m_TagString: Engine
@@ -862,6 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a450dfab0063b4abd0f5229aef6281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inCar: 0
   Playercamera: {fileID: 0}
   Carcamera: {fileID: 0}
   player: {fileID: 0}
@@ -870,6 +872,20 @@ MonoBehaviour:
   carController: {fileID: 0}
   playerInput: {fileID: 0}
   carBody: {fileID: 0}
+--- !u!114 &38711639133836850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550064015094272309}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5cd19d224c8cb4283be5aaf2aa666b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels: []
+  GettingInandOutCar: {fileID: 0}
 --- !u!1 &8550064015094272311
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheels
   m_EditorClassIdentifier: 
   DisplayName: Wheels
-  Icon: {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
+  Icon: {fileID: 21300000, guid: e99c795fd3809e543b91c543d185e58f, type: 3}
   GridSnapSize: 1
   Prefab: {fileID: 8492752469131789955, guid: 4239ceb42181aa144922e96f3fdb29ba, type: 3}
   BuildingSize: {x: 0.8, y: 0.8, z: 0.8}

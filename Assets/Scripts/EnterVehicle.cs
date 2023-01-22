@@ -8,7 +8,7 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class EnterVehicle : MonoBehaviour
 {
-    private bool inCar = false;
+    public bool inCar = false;
     
     [SerializeField]private CinemachineVirtualCamera Playercamera;
     [SerializeField]private CinemachineVirtualCamera Carcamera;
